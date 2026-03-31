@@ -32,8 +32,6 @@ while (!jogadorAcertou)
 
     for (int contadorPalavraSecreta = 0; contadorPalavraSecreta < palavraSecreta.Length; contadorPalavraSecreta++)
     {
-
-
         char letraSecretaAtual = palavraSecreta[contadorPalavraSecreta];
 
         if (chute == letraSecretaAtual)
@@ -42,5 +40,12 @@ while (!jogadorAcertou)
         }
     }
 
-    Console.ReadLine();
+    string letrasCorretasCompleta = string.Join("", letrasCorretas);
+
+    if (palavraSecreta == letrasCorretasCompleta)
+    {
+        Console.WriteLine($"Parabéns! voce acertou! a palavra era: {palavraSecreta}");
+        jogadorAcertou = true;
+    }
 }
+Console.ReadLine();
