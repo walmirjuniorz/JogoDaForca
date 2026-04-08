@@ -61,9 +61,9 @@ bool jogadorPerdeu = false;
 while (true)
 {
     Console.Clear();
-    Console.WriteLine("---------------------------------------------");
+    Console.WriteLine("----------------------------------------");
     Console.WriteLine("Jogo da Forca");
-    Console.WriteLine("---------------------------------------------");
+    Console.WriteLine("----------------------------------------");
     Console.WriteLine("Erros cometidos: " + contadorErros + " erros");
     Console.Write("Chutes: ");
 
@@ -72,7 +72,7 @@ while (true)
         Console.Write(letrasCorretas[contadorLetras]);
     }
 
-    Console.WriteLine("\n---------------------------------------------");
+    Console.WriteLine("\n----------------------------------------");
 
     if (contadorErros == 0)
     {
@@ -141,18 +141,20 @@ while (true)
         Console.WriteLine(@"_|____              ");
     }
 
-    Console.WriteLine("\n---------------------------------------------");
+    Console.WriteLine("\n----------------------------------------");
 
     if (jogadorAcertou)
     {
         Console.WriteLine($"Parabéns! voce acertou! a palavra era: {palavraSecreta}");
+        break;
     }
     else if (jogadorPerdeu)
     {
         Console.WriteLine($"que pena, voce errou! A palavra era: {palavraSecreta}");
+        break;
     }
 
-    Console.WriteLine("Digite uma letra: ");
+    Console.Write("Digite uma letra: ");
     char chute = Convert.ToChar(Console.ReadLine());
 
     bool letraFoiEncontrada = false;
@@ -182,6 +184,5 @@ while (true)
     if (contadorErros > 5)
         jogadorPerdeu = true;
 }
-
-Console.WriteLine("Digite ENTER para continuar..");
+Console.WriteLine("Pressione ENTER para sair...");
 Console.ReadLine();
